@@ -1,0 +1,15 @@
+.dropDownContainer {
+  background-color: "white";
+  border: "1px solid #eee";
+}
+
+.dropDownItem {
+  padding: ".4rem";
+  margin: ".1rem";
+  border-bottom: "1px solid #eee";
+  cursor: "pointer";
+}
+
+.selectBox {
+  padding: ".6rem";
+}

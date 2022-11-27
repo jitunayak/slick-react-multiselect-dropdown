@@ -1,0 +1,79 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+*,
+::after,
+::before {
+  box-sizing: border-box;
+}
+
+input {
+  margin: 0 20px;
+  width: calc(100% - 5px);
+}
+.dropBoxContainer {
+  position: relative;
+  width: fit-content;
+  font: inherit;
+  font-size: inherit;
+}
+
+.selectBox {
+  display: flex;
+  border: 1px solid #eee;
+  padding: 0.2rem;
+  border-radius: 0.2rem;
+  min-width: 10rem;
+}
+
+.selectedItem {
+  padding: 0.2rem 0.6rem;
+  margin: 0.2rem;
+  border: 1px solid green;
+  border-radius: 0.2rem;
+  background-color: #efef;
+  cursor: pointer;
+}
+.selectedItem:hover {
+  opacity: 0.6;
+}
+
+.itemLabel {
+  padding: 0.4rem 0.6rem;
+  border-bottom: 1px solid #eee;
+  margin: 0.2rem;
+  border-radius: 0.15rem;
+  cursor: pointer;
+}
+.itemLabel:hover {
+  background-color: #eee;
+}
+.itemLabel:last-child {
+  border-bottom: none;
+}
+
+.dropDownBox {
+  margin-top: 0.6rem;
+  position: absolute;
+  width: 100%;
+  border: 1px solid #eee;
+  border-radius: 0.2rem;
+  box-shadow: 1px 2px 5px #ccc;
+}
+
+.searchBox {
+  padding: 0.6rem 0.8rem;
+  background-color: #eee;
+  border: none;
+  outline: none;
+  margin: 0.2rem;
+  border-radius: 0.2rem;
+}
+
+.scrollVertical {
+  max-height: 10rem;
+  overflow-x: scroll;
+}

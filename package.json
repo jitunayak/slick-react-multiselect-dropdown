@@ -1,0 +1,43 @@
+{
+  "name": "slick-react-multiselect-dropdown",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "author": {
+    "name": "Jitu Nayaj",
+    "email": "jitunayak715@gmail.com"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
+  },
+  "peerDependencies": {
+    "react": "^16 || ^17 || ^18",
+    "react-dom": "^16 || ^17 || ^18"
+  },
+  "devDependencies": {
+    "@types/react": "^18.0.24",
+    "@types/react-dom": "^18.0.8",
+    "@vitejs/plugin-react": "^2.2.0",
+    "typescript": "^4.6.4",
+    "vite": "^3.2.3"
+  },
+  "browserslist": [
+    "defaults",
+    "not IE 11",
+    "maintained node versions"
+  ],
+  "keywords": [
+    "slick",
+    "react",
+    "multi",
+    "select",
+    "checkboxes",
+    "select-all",
+    "dropdown",
+    "component",
+    "tiny",
+    "lightweight"
+  ]
+}

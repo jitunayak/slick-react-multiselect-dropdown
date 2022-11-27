@@ -1,0 +1,31 @@
+{
+  "name": "slick-react-multiselect-dropdown",
+  "version": "0.0.1",
+  "description": "slick design lightweight multiple selection dropdown component",
+  "main": "MultiSelect.tsx",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jitunayak/slick-react-multiselect-dropdown.git"
+  },
+  "author": "Jitu Nayak",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jitunayak/slick-react-multiselect-dropdown/issues"
+  },
+  "homepage": "https://github.com/jitunayak/slick-react-multiselect-dropdown#readme",
+  "keywords": [
+    "slick",
+    "react",
+    "multi",
+    "select",
+    "checkboxes",
+    "select-all",
+    "dropdown",
+    "component",
+    "tiny",
+    "lightweight"
+  ]
+}
