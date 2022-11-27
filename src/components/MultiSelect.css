@@ -1,3 +1,9 @@
+*,
+::after,
+::before {
+  box-sizing: border-box;
+}
+
 input {
   margin: 0 20px;
   width: calc(100% - 5px);
@@ -35,6 +41,7 @@ input {
   margin: 0.2rem;
   border-radius: 0.15rem;
   cursor: pointer;
+  background-color: white;
 }
 .itemLabel:hover {
   background-color: #eee;

@@ -14,7 +14,7 @@ input {
   margin: 0 20px;
   width: calc(100% - 5px);
 }
-.dropBoxContainer {
+/* .dropBoxContainer {
   position: relative;
   width: fit-content;
   font: inherit;
@@ -76,4 +76,4 @@ input {
 .scrollVertical {
   max-height: 10rem;
   overflow-x: scroll;
-}
+} */

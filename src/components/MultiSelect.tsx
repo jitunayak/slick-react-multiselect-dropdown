@@ -1,14 +1,15 @@
 import { useState } from "react";
 import "./MultiSelect.css";
 
-type Item = { label: string; key: string };
-type IProps = {
+export type Item = { label: string; key: string };
+export type IProps = {
   placeholder?: string;
   list: Item[];
   //   selectedItems: Item[];
   //   setselectedItems: any;
   selectedItems: Item[];
   setSelectedItems: any;
+  enableSearch?: boolean;
 };
 
 function MultiSelect({
@@ -21,6 +22,7 @@ function MultiSelect({
   ],
   selectedItems,
   setSelectedItems: setselectedItems,
+  enableSearch = true,
 }: IProps) {
   //   const [selectedItems, setselectedItems] = useState<Item[]>([]);
   const [showDropDownBox, setshowDropDownBox] = useState(false);
@@ -65,21 +67,23 @@ function MultiSelect({
       </div>
       {showDropDownBox && (
         <div className="dropDownBox">
-          <input
-            placeholder="search.."
-            className="searchBox"
-            value={filtertext}
-            onChange={(e) => {
-              setFiltertext(e.target.value);
-              setAllItem(
-                list.filter((item) =>
-                  item.label
-                    .toLowerCase()
-                    .startsWith(e.target.value.toLowerCase())
-                )
-              );
-            }}
-          />
+          {enableSearch && (
+            <input
+              placeholder="search.."
+              className="searchBox"
+              value={filtertext}
+              onChange={(e) => {
+                setFiltertext(e.target.value);
+                setAllItem(
+                  list.filter((item) =>
+                    item.label
+                      .toLowerCase()
+                      .startsWith(e.target.value.toLowerCase())
+                  )
+                );
+              }}
+            />
+          )}
           <div className="scrollVertical">
             {allItem.map((s) => (
               <div
