@@ -16,6 +16,10 @@
     "url": "https://github.com/jitunayak/slick-react-multiselect-dropdown/issues"
   },
   "homepage": "https://github.com/jitunayak/slick-react-multiselect-dropdown#readme",
+  "peerDependencies": {
+    "react": "^16 || ^17 || ^18",
+    "react-dom": "^16 || ^17 || ^18"
+  },
   "keywords": [
     "slick",
     "react",
