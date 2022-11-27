@@ -1,6 +1,6 @@
-## slick-react-multiselect-dropdown
+## Slick React Multiselect Dropdown
 
-!["demo snapshot"](https://github.com/jitunayak/slick-react-multiselect-dropdown/blob/main/public/snapshot1.png?raw=true)
+!["demo snapshot"](https://github.com/jitunayak/slick-react-multiselect-dropdown/blob/main/public/snapshot1.jpeg?raw=true)
 
 ```ts
  const listItems = [
