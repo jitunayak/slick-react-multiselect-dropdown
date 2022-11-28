@@ -62,3 +62,17 @@ color values for selected Items could be in all css accepted formats. such as `#
 ## Result
 
 !["demo snapshot"](https://github.com/jitunayak/slick-react-multiselect-dropdown/blob/main/public/snapshot2.jpeg?raw=true)
+
+## Types
+
+```ts
+export type Item = { label: string; key: string };
+export type IProps = {
+  placeholder?: string;
+  list: Item[];
+  selectedItems: Item[];
+  setSelectedItems: any;
+  enableSearch?: boolean;
+  colorSelectedItem?: { border: string; background: string };
+};
+```

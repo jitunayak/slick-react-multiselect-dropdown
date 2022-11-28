@@ -13,16 +13,11 @@ export type IProps = {
 
 function MultiSelect({
   placeholder = "select",
-  list = [
-    { label: "Apple 🍎", key: "apple" },
-    { label: "Unicorn 🦄", key: "unicorn" },
-    { label: "Burger 🍔", key: "burder" },
-    { label: "Cheers 🥂", key: "cheers" },
-  ],
+  list = [],
   selectedItems,
   setSelectedItems: setselectedItems,
   enableSearch = true,
-  colorSelectedItem = { border: "red", background: "rgb(254 242 242)" },
+  colorSelectedItem = { border: "green", background: "#cecec" },
 }: IProps) {
   const [showDropDownBox, setshowDropDownBox] = useState(false);
   const [filtertext, setFiltertext] = useState("");

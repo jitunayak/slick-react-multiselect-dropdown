@@ -10,7 +10,7 @@ input {
 }
 .dropBoxContainer {
   position: relative;
-  width: fit-content;
+  width: auto;
   font: inherit;
   font-size: inherit;
 }
@@ -21,6 +21,7 @@ input {
   padding: 0.2rem;
   border-radius: 0.2rem;
   min-width: 10rem;
+  flex-wrap: wrap;
 }
 
 .selectedItem {
@@ -30,6 +31,7 @@ input {
   border-radius: 0.2rem;
   background-color: #efef;
   cursor: pointer;
+  color: black;
 }
 .selectedItem:hover {
   opacity: 0.6;
@@ -42,6 +44,8 @@ input {
   border-radius: 0.15rem;
   cursor: pointer;
   background-color: white;
+  color: black;
+  width: 100%;
 }
 .itemLabel:hover {
   background-color: #eee;
@@ -53,10 +57,12 @@ input {
 .dropDownBox {
   margin-top: 0.6rem;
   position: absolute;
-  width: 100%;
+  min-width: 12rem;
+  width: max-content;
   border: 1px solid #eee;
   border-radius: 0.2rem;
   box-shadow: 1px 2px 5px #ccc;
+  background-color: white;
 }
 
 .searchBox {

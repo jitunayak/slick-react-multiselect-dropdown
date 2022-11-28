@@ -5,7 +5,10 @@ import "./components/MultiSelect.css";
 function App() {
   const placeholder = "select";
   const list = [
-    { label: "Apple 🍎", key: "apple" },
+    {
+      label: "Apple 🍎 Four times 4",
+      key: "apple",
+    },
     { label: "Unicorn 🦄", key: "unicorn" },
     { label: "Burger 🍔", key: "burder" },
     { label: "Cheers 🥂", key: "cheers" },
