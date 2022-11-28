@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./MultiSelect.css";
 
 export type Item = { label: string; key: string };
@@ -22,6 +22,7 @@ function MultiSelect({
   const [showDropDownBox, setshowDropDownBox] = useState(false);
   const [filtertext, setFiltertext] = useState("");
   const [allItem, setAllItem] = useState(list);
+  const [isFocused, setisFocused] = useState(false);
 
   const handleAddItem = (itemToBeAdded: Item) => {
     const doesItemAlreadyExist = selectedItems.find(
@@ -37,8 +38,22 @@ function MultiSelect({
     );
   };
 
+  useEffect(() => {
+    window.addEventListener("click", () => {
+      isFocused ? setshowDropDownBox(true) : setshowDropDownBox(false);
+    });
+  }, [isFocused]);
+
   return (
-    <div className="dropBoxContainer">
+    <div
+      className="dropBoxContainer"
+      onMouseLeave={() => {
+        setisFocused(false);
+      }}
+      onMouseEnter={() => {
+        setisFocused(true);
+      }}
+    >
       <div className="selectBox">
         {selectedItems.length === 0 && (
           <div
@@ -47,7 +62,10 @@ function MultiSelect({
               borderColor: `${colorSelectedItem.border}`,
               backgroundColor: `${colorSelectedItem.background}`,
             }}
-            onClick={() => setshowDropDownBox(!showDropDownBox)}
+            onClick={() => {
+              setshowDropDownBox(!showDropDownBox);
+              setisFocused(true);
+            }}
           >
             {placeholder} ...{" "}
           </div>
