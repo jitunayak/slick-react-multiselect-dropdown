@@ -44,7 +44,6 @@ function MultiSelect({
 
   useEffect(() => {
     const listner = window.addEventListener("click", () => {
-      console.log({ isFocused });
       isFocused ? setshowDropDownBox(true) : setshowDropDownBox(false);
     });
 
