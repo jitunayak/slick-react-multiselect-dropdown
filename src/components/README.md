@@ -39,3 +39,26 @@ yarn add slick-react-multiselect-dropdown # yarn
         setSelectedItems={setSelectedItem}
     />
 ```
+
+## 💄 Themable
+
+color values for selected Items could be in all css accepted formats. such as `#cece` `rgb(254 242 242)` `green`
+
+```ts
+
+  const colorSelectedItem = {
+    { border: "red", background: "rgb(254 242 242)" }
+  }
+
+   <MultiSelect
+        placeholder="Select from list"
+        list= {listItems}
+        selectedItems= {selectedItem}
+        setSelectedItems= {setSelectedItem}
+        colorSelectedItem= {colorSelectedItem}
+    />
+```
+
+## Result
+
+!["demo snapshot"](https://github.com/jitunayak/slick-react-multiselect-dropdown/blob/main/public/snapshot2.jpeg?raw=true)

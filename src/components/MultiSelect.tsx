@@ -5,11 +5,10 @@ export type Item = { label: string; key: string };
 export type IProps = {
   placeholder?: string;
   list: Item[];
-  //   selectedItems: Item[];
-  //   setselectedItems: any;
   selectedItems: Item[];
   setSelectedItems: any;
   enableSearch?: boolean;
+  colorSelectedItem?: { border: string; background: string };
 };
 
 function MultiSelect({
@@ -23,18 +22,17 @@ function MultiSelect({
   selectedItems,
   setSelectedItems: setselectedItems,
   enableSearch = true,
+  colorSelectedItem = { border: "red", background: "rgb(254 242 242)" },
 }: IProps) {
-  //   const [selectedItems, setselectedItems] = useState<Item[]>([]);
   const [showDropDownBox, setshowDropDownBox] = useState(false);
   const [filtertext, setFiltertext] = useState("");
   const [allItem, setAllItem] = useState(list);
+
   const handleAddItem = (itemToBeAdded: Item) => {
     const doesItemAlreadyExist = selectedItems.find(
       (item) => item.key === itemToBeAdded.key
     );
-
     if (doesItemAlreadyExist) return;
-
     setselectedItems([...selectedItems, itemToBeAdded]);
   };
 
@@ -50,6 +48,10 @@ function MultiSelect({
         {selectedItems.length === 0 && (
           <div
             className="selectedItem"
+            style={{
+              borderColor: `${colorSelectedItem.border}`,
+              backgroundColor: `${colorSelectedItem.background}`,
+            }}
             onClick={() => setshowDropDownBox(!showDropDownBox)}
           >
             {placeholder} ...{" "}
@@ -59,6 +61,10 @@ function MultiSelect({
           <div
             key={item.key}
             className="selectedItem"
+            style={{
+              borderColor: `${colorSelectedItem.border}`,
+              backgroundColor: `${colorSelectedItem.background}`,
+            }}
             onClick={() => handleRemoveItem(item)}
           >
             {item.label} ｘ{" "}
