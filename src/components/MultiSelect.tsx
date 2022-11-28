@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import "./MultiSelect.css";
 
 export type Item = { label: string; key: string };
@@ -19,10 +19,14 @@ function MultiSelect({
   enableSearch = true,
   colorSelectedItem = { border: "green", background: "#cecec" },
 }: IProps) {
+  const searchInputRef = useRef<any>();
+
   const [showDropDownBox, setshowDropDownBox] = useState(false);
   const [filtertext, setFiltertext] = useState("");
   const [allItem, setAllItem] = useState(list);
   const [isFocused, setisFocused] = useState(false);
+
+  //   const [isSearchBoxFocused, setIsSearchBoxFocused] = useState(true);
 
   const handleAddItem = (itemToBeAdded: Item) => {
     const doesItemAlreadyExist = selectedItems.find(
@@ -39,9 +43,12 @@ function MultiSelect({
   };
 
   useEffect(() => {
-    window.addEventListener("click", () => {
+    const listner = window.addEventListener("click", () => {
+      console.log({ isFocused });
       isFocused ? setshowDropDownBox(true) : setshowDropDownBox(false);
     });
+
+    return () => {};
   }, [isFocused]);
 
   return (
@@ -51,6 +58,7 @@ function MultiSelect({
         setisFocused(false);
       }}
       onMouseEnter={() => {
+        searchInputRef?.current?.focus();
         setisFocused(true);
       }}
     >
@@ -91,6 +99,7 @@ function MultiSelect({
               placeholder="search.."
               className="searchBox"
               value={filtertext}
+              ref={searchInputRef}
               onChange={(e) => {
                 setFiltertext(e.target.value);
                 setAllItem(
