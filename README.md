@@ -7,6 +7,10 @@ A very `lightweight` and simple multiple selection dropdown component with `sear
 
 !["demo snapshot"](https://github.com/jitunayak/slick-react-multiselect-dropdown/blob/main/public/snapshot1.jpeg?raw=true)
 
+## Wrap Selections
+
+!["demo snapshot"](https://github.com/jitunayak/slick-react-multiselect-dropdown/blob/main/public/snapshot3.png?raw=true)
+
 ## ✨ Features
 
 - 🕶 Zero Dependency

@@ -65,4 +65,4 @@ color values for selected Items could be in all css accepted formats. such as `#
 
 ## Wrap Selections
 
-!["demo snapshot"](https://github.com/jitunayak/slick-react-multiselect-dropdown/blob/main/public/snapshot3.jpeg?raw=true)
+!["demo snapshot"](https://github.com/jitunayak/slick-react-multiselect-dropdown/blob/main/public/snapshot3.png?raw=true)
