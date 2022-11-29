@@ -91,6 +91,7 @@ function MultiSelect({
             {item.label} ｘ{" "}
           </div>
         ))}
+        <div style={{ width: "2rem" }}></div>
         <div
           className="icon"
           onClick={() => {
