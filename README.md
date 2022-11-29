@@ -5,11 +5,7 @@ A very `lightweight` and simple multiple selection dropdown component with `sear
 [![NPM](https://img.shields.io/npm/v/slick-react-multiselect-dropdown.svg)](https://npm.im/slick-react-multiselect-dropdown)
 [![gzip](https://badgen.net/bundlephobia/minzip/slick-react-multiselect-dropdown@latest)](https://bundlephobia.com/result?p=slick-react-multiselect-dropdownt@latest)
 
-!["demo snapshot"](https://github.com/jitunayak/slick-react-multiselect-dropdown/blob/main/public/snapshot1.jpeg?raw=true)
-
-## Wrap Selections
-
-!["demo snapshot"](https://github.com/jitunayak/slick-react-multiselect-dropdown/blob/main/public/snapshot3.png?raw=true)
+[<img src="https://github.com/jitunayak/slick-react-multiselect-dropdown/blob/main/public/snapshot4.png?raw=true" width="250"/>](image.png)
 
 ## ✨ Features
 
@@ -65,11 +61,11 @@ color values for selected Items could be in all css accepted formats. such as `#
 
 ## Result
 
-!["demo snapshot"](https://github.com/jitunayak/slick-react-multiselect-dropdown/blob/main/public/snapshot2.jpeg?raw=true)
+[<img src="https://github.com/jitunayak/slick-react-multiselect-dropdown/blob/main/public/snapshot2.jpeg?raw=true" width="350"/>](image.png)
 
 ## Wrap Items
 
-!["demo snapshot"](https://github.com/jitunayak/slick-react-multiselect-dropdown/blob/main/public/snapshot3.png?raw=true)
+[<img src="https://github.com/jitunayak/slick-react-multiselect-dropdown/blob/main/public/snapshot3.png?raw=true" width="350"/>](image.png)
 
 ## Types
 
