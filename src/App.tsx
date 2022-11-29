@@ -12,6 +12,9 @@ function App() {
     { label: "Unicorn 🦄", key: "unicorn" },
     { label: "Burger 🍔", key: "burder" },
     { label: "Cheers 🥂", key: "cheers" },
+    { label: "Unicorn 🦄", key: "unicorn2" },
+    { label: "Burger 🍔", key: "burder2" },
+    { label: "Cheers 🥂", key: "cheers2" },
   ];
   const [selectedItems, setselectedItems] = useState<Item[]>([]);
   const [showDropDownBox, setshowDropDownBox] = useState(false);

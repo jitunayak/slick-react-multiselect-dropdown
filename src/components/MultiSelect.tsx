@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import { Arrow } from "./Arrow";
 import "./MultiSelect.css";
 
 export type Item = { label: string; key: string };
@@ -74,7 +75,7 @@ function MultiSelect({
               setisFocused(true);
             }}
           >
-            {placeholder} ...{" "}
+            {placeholder} ...
           </div>
         )}
         {selectedItems.map((item) => (
@@ -90,6 +91,15 @@ function MultiSelect({
             {item.label} ｘ{" "}
           </div>
         ))}
+        <div
+          className="icon"
+          onClick={() => {
+            setisFocused(!isFocused);
+            setshowDropDownBox(!showDropDownBox);
+          }}
+        >
+          <Arrow expanded={showDropDownBox} />
+        </div>
       </div>
       {showDropDownBox && (
         <div className="dropDownBox">
