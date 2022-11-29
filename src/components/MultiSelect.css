@@ -18,7 +18,7 @@ input {
 .selectBox {
   display: flex;
   justify-content: baseline;
-  /* border: 1px solid #ccc; */
+  border: 1px solid #eee;
   padding: 0.2rem;
   border-radius: 0.2rem;
   min-width: 10rem;
