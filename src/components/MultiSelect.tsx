@@ -88,7 +88,7 @@ function MultiSelect({
     if (label.toLowerCase().startsWith(filtertext))
       return (
         <>
-          <b style={{ color: "green" }}>{filtertext}</b>
+          <b style={{ color: colorSelectedItem.border }}>{filtertext}</b>
           {label.split(filtertext).at(1)}
         </>
       );
@@ -96,7 +96,7 @@ function MultiSelect({
     return (
       <>
         {label.split(filtertext).at(0)}
-        <b style={{ color: "green" }}>{filtertext}</b>
+        <b style={{ color: colorSelectedItem.border }}>{filtertext}</b>
         {label.split(filtertext).at(1)}
       </>
     );

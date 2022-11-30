@@ -5,6 +5,7 @@ A very `lightweight` and simple multiple selection dropdown component with `sear
 [![NPM](https://img.shields.io/npm/v/slick-react-multiselect-dropdown.svg)](https://npm.im/slick-react-multiselect-dropdown)
 [![gzip](https://badgen.net/bundlephobia/minzip/slick-react-multiselect-dropdown@latest)](https://bundlephobia.com/result?p=slick-react-multiselect-dropdownt@latest)
 
+[<img src="https://github.com/jitunayak/slick-react-multiselect-dropdown/blob/main/public/snapshot5..png?raw=true" width="200"/>](image.png)
 [<img src="https://github.com/jitunayak/slick-react-multiselect-dropdown/blob/main/public/snapshot4.png?raw=true" width="250"/>](image.png)
 
 ## ✨ Features
@@ -12,6 +13,9 @@ A very `lightweight` and simple multiple selection dropdown component with `sear
 - 🕶 Zero Dependency
 - 🍃 Lightweight (<5KB)
 - ✌ Written w/ TypeScript
+- ⌨ Keyboard navigation to search, move, close dropddown items
+- 🔍 Search character hightlights
+- 💄 Fully themable
 
 ## 🔧 Installation
 

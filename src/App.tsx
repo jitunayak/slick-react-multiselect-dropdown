@@ -25,6 +25,7 @@ function App() {
       selectedItems={selectedItems}
       setSelectedItems={setselectedItems}
       enableSearch={true}
+      colorSelectedItem={{ border: "red", background: "rgb(254 242 242)" }}
     />
   );
 }
