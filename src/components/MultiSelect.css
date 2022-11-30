@@ -44,8 +44,7 @@ input {
 .itemLabel {
   padding: 0.6rem 0.8rem;
   border-bottom: 1px solid #eee;
-  margin: 0.2rem;
-  border-radius: 0.15rem;
+  margin: 0rem;
   cursor: pointer;
   background-color: white;
   color: black;
@@ -55,7 +54,9 @@ input {
 }
 .itemLabel:hover {
   background-color: #eee;
+  border-radius: 0.2rem;
 }
+
 .itemLabel:last-child {
   border-bottom: none;
 }
@@ -82,8 +83,11 @@ input {
 }
 
 .scrollVertical {
-  max-height: 10rem;
+  max-height: 15em;
   overflow-y: scroll;
+  padding: 0.2rem;
+  width: 100%;
+  background-color: white;
 }
 
 .icon {

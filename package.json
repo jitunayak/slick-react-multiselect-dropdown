@@ -11,7 +11,7 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
-    "patch:publish": "npm patch && cd ./src/components && npm version patch && npm publish"
+    "patch": "npm version patch"
   },
   "peerDependencies": {
     "react": "^16 || ^17 || ^18",
