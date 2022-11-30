@@ -36,20 +36,22 @@ function MultiSelect({
   };
 
   useEffect(() => {
-    const listner = window.addEventListener("click", () => {
+    window.addEventListener("click", () => {
       isFocused ? setshowDropDownBox(true) : setshowDropDownBox(false);
     });
 
-    return () => {};
+    return () => {
+      window.removeEventListener("click", () => {});
+    };
   }, [isFocused]);
 
   const arrowUpPressed = useKeyPress("ArrowUp");
   const arrowDownPressed = useKeyPress("ArrowDown");
   const enterPressed = useKeyPress("Enter");
+  const escPressed = useKeyPress("Escape");
 
   useEffect(() => {
     if (arrowUpPressed) {
-      console.log("arrowUpPressed");
       currentFocusedLabelIndex === 0
         ? setCurrentFocusedLabel(allItem.length - 1)
         : setCurrentFocusedLabel(currentFocusedLabelIndex - 1);
@@ -66,10 +68,20 @@ function MultiSelect({
 
   useEffect(() => {
     if (enterPressed) {
+      if (!showDropDownBox) {
+        setshowDropDownBox(true);
+        return;
+      }
       const itemTobeAdded = allItem[currentFocusedLabelIndex];
       handleAddItem(itemTobeAdded);
     }
   }, [enterPressed]);
+
+  useEffect(() => {
+    if (escPressed) {
+      setshowDropDownBox(false);
+    }
+  }, [escPressed]);
 
   return (
     <div

@@ -16,7 +16,7 @@ const useKeyPress = (targetKey: string) => {
       }
     };
 
-    window.addEventListener("keydown", (e) => downHandler(e));
+    window.addEventListener("keydown", downHandler);
     window.addEventListener("keyup", upHandler);
 
     return () => {
