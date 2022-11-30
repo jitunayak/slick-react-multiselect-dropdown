@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Arrow } from "./Arrow";
 import "./MultiSelect.css";
 import { IProps, Item } from "./Types";
@@ -83,6 +83,25 @@ function MultiSelect({
     }
   }, [escPressed]);
 
+  function searchHighLightedResult(label: string): React.ReactNode {
+    if (filtertext.length === 0) return label;
+    if (label.toLowerCase().startsWith(filtertext))
+      return (
+        <>
+          <b style={{ color: "green" }}>{filtertext}</b>
+          {label.split(filtertext).at(1)}
+        </>
+      );
+
+    return (
+      <>
+        {label.split(filtertext).at(0)}
+        <b style={{ color: "green" }}>{filtertext}</b>
+        {label.split(filtertext).at(1)}
+      </>
+    );
+  }
+
   return (
     <div
       className="dropBoxContainer"
@@ -143,7 +162,7 @@ function MultiSelect({
               value={filtertext}
               ref={searchInputRef}
               onChange={(e) => {
-                setFiltertext(e.target.value);
+                setFiltertext(e.target.value.toLowerCase());
                 setAllItem(
                   list.filter((item) =>
                     item.label
@@ -165,7 +184,7 @@ function MultiSelect({
                 }}
                 onClick={() => handleAddItem(s)}
               >
-                {s.label}
+                {searchHighLightedResult(s.label.toLowerCase())}
               </div>
             ))}
           </div>
