@@ -79,7 +79,6 @@ export type IProps = {
   setSelectedItems: any;
   enableSearch?: boolean;
   colorSelectedItem?: { border: string; background: string };
-  selectBoxcss?: {}; // any inline css properties e.g padding: '.2rem'
-
+  selectBoxcss?: {}; // any inline css properties e.g  selectBoxcss={{padding: '.2rem'}}
 };
 ```
