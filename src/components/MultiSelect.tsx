@@ -67,7 +67,7 @@ function MultiSelect({
   useEffect(() => {
     if (enterPressed) {
       const itemTobeAdded = allItem[currentFocusedLabelIndex];
-      setselectedItems([...selectedItems, itemTobeAdded]);
+      handleAddItem(itemTobeAdded);
     }
   }, [enterPressed]);
 
