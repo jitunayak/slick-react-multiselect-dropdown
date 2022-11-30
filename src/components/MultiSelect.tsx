@@ -10,6 +10,11 @@ export type IProps = {
   setSelectedItems: any;
   enableSearch?: boolean;
   colorSelectedItem?: { border: string; background: string };
+  selectBoxcss?: {};
+};
+
+const sizeTypes = {
+  small: { padding: "0.2rem", backGroundColor: "red" },
 };
 
 function MultiSelect({
@@ -19,6 +24,7 @@ function MultiSelect({
   setSelectedItems: setselectedItems,
   enableSearch = true,
   colorSelectedItem = { border: "green", background: "#cecec" },
+  selectBoxcss = {},
 }: IProps) {
   const searchInputRef = useRef<any>();
 
@@ -62,7 +68,7 @@ function MultiSelect({
         setisFocused(true);
       }}
     >
-      <div className="selectBox">
+      <div className="selectBox" style={selectBoxcss}>
         {selectedItems.length === 0 && (
           <div
             className="selectedItem"

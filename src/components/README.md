@@ -71,6 +71,7 @@ color values for selected Items could be in all css accepted formats. such as `#
 
 ```ts
 export type Item = { label: string; key: string };
+
 export type IProps = {
   placeholder?: string;
   list: Item[];
@@ -78,5 +79,7 @@ export type IProps = {
   setSelectedItems: any;
   enableSearch?: boolean;
   colorSelectedItem?: { border: string; background: string };
+  selectBoxcss?: {}; // any inline css properties e.g padding: '.2rem'
+
 };
 ```

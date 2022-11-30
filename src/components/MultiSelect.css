@@ -19,7 +19,7 @@ input {
   display: flex;
   justify-content: baseline;
   border: 1px solid #eee;
-  padding: 0.2rem;
+  padding: 0.4rem;
   border-radius: 0.2rem;
   min-width: 10rem;
   flex-wrap: wrap;
@@ -95,4 +95,5 @@ input {
   background-color: white;
   padding: 0.2rem;
   right: 0;
+  cursor: pointer;
 }
