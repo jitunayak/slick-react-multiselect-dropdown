@@ -1,21 +1,8 @@
 import { useEffect, useRef, useState } from "react";
 import { Arrow } from "./Arrow";
 import "./MultiSelect.css";
-
-export type Item = { label: string; key: string };
-export type IProps = {
-  placeholder?: string;
-  list: Item[];
-  selectedItems: Item[];
-  setSelectedItems: any;
-  enableSearch?: boolean;
-  colorSelectedItem?: { border: string; background: string };
-  selectBoxcss?: {};
-};
-
-const sizeTypes = {
-  small: { padding: "0.2rem", backGroundColor: "red" },
-};
+import { IProps, Item } from "./Types";
+import useKeyPress from "./UseKeyPress";
 
 function MultiSelect({
   placeholder = "select",
@@ -32,8 +19,7 @@ function MultiSelect({
   const [filtertext, setFiltertext] = useState("");
   const [allItem, setAllItem] = useState(list);
   const [isFocused, setisFocused] = useState(false);
-
-  //   const [isSearchBoxFocused, setIsSearchBoxFocused] = useState(true);
+  const [currentFocusedLabelIndex, setCurrentFocusedLabel] = useState(0);
 
   const handleAddItem = (itemToBeAdded: Item) => {
     const doesItemAlreadyExist = selectedItems.find(
@@ -56,6 +42,34 @@ function MultiSelect({
 
     return () => {};
   }, [isFocused]);
+
+  const arrowUpPressed = useKeyPress("ArrowUp");
+  const arrowDownPressed = useKeyPress("ArrowDown");
+  const enterPressed = useKeyPress("Enter");
+
+  useEffect(() => {
+    if (arrowUpPressed) {
+      console.log("arrowUpPressed");
+      currentFocusedLabelIndex === 0
+        ? setCurrentFocusedLabel(allItem.length - 1)
+        : setCurrentFocusedLabel(currentFocusedLabelIndex - 1);
+    }
+  }, [arrowUpPressed]);
+
+  useEffect(() => {
+    if (arrowDownPressed) {
+      currentFocusedLabelIndex === allItem.length - 1
+        ? setCurrentFocusedLabel(0)
+        : setCurrentFocusedLabel(currentFocusedLabelIndex + 1);
+    }
+  }, [arrowDownPressed]);
+
+  useEffect(() => {
+    if (enterPressed) {
+      const itemTobeAdded = allItem[currentFocusedLabelIndex];
+      setselectedItems([...selectedItems, itemTobeAdded]);
+    }
+  }, [enterPressed]);
 
   return (
     <div
@@ -94,7 +108,7 @@ function MultiSelect({
             }}
             onClick={() => handleRemoveItem(item)}
           >
-            {item.label} ｘ{" "}
+            {item.label} ｘ
           </div>
         ))}
         <div style={{ width: "2rem" }}></div>
@@ -122,17 +136,21 @@ function MultiSelect({
                   list.filter((item) =>
                     item.label
                       .toLowerCase()
-                      .startsWith(e.target.value.toLowerCase())
+                      .includes(e.target.value.toLowerCase())
                   )
                 );
               }}
             />
           )}
           <div className="scrollVertical">
-            {allItem.map((s) => (
+            {allItem.map((s, index) => (
               <div
                 key={s.key}
                 className="itemLabel"
+                style={{
+                  backgroundColor:
+                    currentFocusedLabelIndex === index ? "#eee" : "white",
+                }}
                 onClick={() => handleAddItem(s)}
               >
                 {s.label}

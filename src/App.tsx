@@ -1,6 +1,7 @@
 import { useState } from "react";
-import MultiSelect, { Item } from "./components/MultiSelect";
+import MultiSelect from "./components/MultiSelect";
 import "./components/MultiSelect.css";
+import { Item } from "./components/Types";
 
 function App() {
   const placeholder = "select";
@@ -12,9 +13,6 @@ function App() {
     { label: "Unicorn 🦄", key: "unicorn" },
     { label: "Burger 🍔", key: "burder" },
     { label: "Cheers 🥂", key: "cheers" },
-    { label: "Unicorn 🦄", key: "unicorn2" },
-    { label: "Burger 🍔", key: "burder2" },
-    { label: "Cheers 🥂", key: "cheers2" },
   ];
   const [selectedItems, setselectedItems] = useState<Item[]>([]);
   const [showDropDownBox, setshowDropDownBox] = useState(false);
