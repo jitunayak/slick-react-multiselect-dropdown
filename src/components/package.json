@@ -1,6 +1,6 @@
 {
   "name": "slick-react-multiselect-dropdown",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "slick design lightweight multiple selection dropdown component",
   "main": "MultiSelect.tsx",
   "scripts": {

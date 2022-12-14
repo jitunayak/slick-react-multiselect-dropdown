@@ -177,11 +177,11 @@ function MultiSelect({
           {allItem.map((s, index) => (
             <div
               key={s.key}
-              className="itemLabel"
-              style={{
-                backgroundColor:
-                  currentFocusedLabelIndex === index ? "#eee" : "white",
-              }}
+              className={
+                currentFocusedLabelIndex === index
+                  ? "itemLabelFocused"
+                  : "itemLabel"
+              }
               onClick={() => handleAddItem(s)}
             >
               {searchHighLightedResult(s.label.toLowerCase())}

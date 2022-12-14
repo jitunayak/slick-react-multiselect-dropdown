@@ -4,6 +4,10 @@
   box-sizing: border-box;
 }
 
+button {
+  border-radius: 0.2rem;
+}
+
 input {
   margin: 0 20px;
   width: calc(100% - 5px);
@@ -47,14 +51,34 @@ input {
   margin: 0rem;
   cursor: pointer;
   background-color: white;
+  color: rgb(29, 29, 29);
+  width: 100%;
+  font: inherit;
+  font-size: small;
+  opacity: 0.9;
+  border-radius: 0.2rem;
+}
+
+.itemLabelFocused {
+  padding: 0.6rem 0.8rem;
+  border-bottom: 1px solid #eee;
+  margin: 0rem;
+  cursor: pointer;
+  background-color: #eee;
   color: black;
   width: 100%;
   font: inherit;
   font-size: small;
+  border-radius: 0.2rem;
 }
 .itemLabel:hover {
-  background-color: #eee;
-  border-radius: 0.2rem;
+  background-color: #ccc;
+  color: black;
+}
+
+.itemLabelFocused:hover {
+  background-color: #ccc;
+  color: black;
 }
 
 .itemLabel:last-child {
@@ -66,7 +90,7 @@ input {
   min-width: 12rem;
   width: max-content;
   border: 1px solid #eee;
-  border-radius: 0.2rem;
+  border-radius: 0.1rem;
   box-shadow: 1px 2px 5px #ccc;
   background-color: white;
   transition: all 1s cubic-bezier(0.16, 1, 0.5, 1);
