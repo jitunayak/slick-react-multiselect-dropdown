@@ -84,7 +84,7 @@ input {
   box-shadow: 1px 2px 5px #ccc;
   background-color: white;
   transition: all 1s cubic-bezier(0.16, 1, 0.5, 1);
-  transform: translateY(1rem);
+  transform: translateY(0.6rem);
   visibility: visible;
   opacity: 1;
 }
