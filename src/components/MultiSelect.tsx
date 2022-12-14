@@ -109,8 +109,8 @@ function MultiSelect({
         setisFocused(false);
       }}
       onMouseEnter={() => {
-        searchInputRef?.current?.focus();
         setisFocused(true);
+        searchInputRef?.current?.focus();
       }}
     >
       <div className="selectBox" style={selectBoxcss}>
@@ -146,50 +146,49 @@ function MultiSelect({
         <div
           className="icon"
           onClick={() => {
-            setisFocused(!isFocused);
+            showDropDownBox ? setisFocused(false) : setisFocused(true);
             setshowDropDownBox(!showDropDownBox);
           }}
         >
           <Arrow expanded={showDropDownBox} />
         </div>
       </div>
-      {showDropDownBox && (
-        <div className="dropDownBox">
-          {enableSearch && (
-            <input
-              placeholder="search.."
-              className="searchBox"
-              value={filtertext}
-              ref={searchInputRef}
-              onChange={(e) => {
-                setFiltertext(e.target.value.toLowerCase());
-                setAllItem(
-                  list.filter((item) =>
-                    item.label
-                      .toLowerCase()
-                      .includes(e.target.value.toLowerCase())
-                  )
-                );
+
+      <div className={showDropDownBox ? "dropDownBoxShow" : "dropDownBox"}>
+        {enableSearch && (
+          <input
+            placeholder="search.."
+            className="searchBox"
+            value={filtertext}
+            ref={searchInputRef}
+            onChange={(e) => {
+              setFiltertext(e.target.value.toLowerCase());
+              setAllItem(
+                list.filter((item) =>
+                  item.label
+                    .toLowerCase()
+                    .includes(e.target.value.toLowerCase())
+                )
+              );
+            }}
+          />
+        )}
+        <div className="scrollVertical">
+          {allItem.map((s, index) => (
+            <div
+              key={s.key}
+              className="itemLabel"
+              style={{
+                backgroundColor:
+                  currentFocusedLabelIndex === index ? "#eee" : "white",
               }}
-            />
-          )}
-          <div className="scrollVertical">
-            {allItem.map((s, index) => (
-              <div
-                key={s.key}
-                className="itemLabel"
-                style={{
-                  backgroundColor:
-                    currentFocusedLabelIndex === index ? "#eee" : "white",
-                }}
-                onClick={() => handleAddItem(s)}
-              >
-                {searchHighLightedResult(s.label.toLowerCase())}
-              </div>
-            ))}
-          </div>
+              onClick={() => handleAddItem(s)}
+            >
+              {searchHighLightedResult(s.label.toLowerCase())}
+            </div>
+          ))}
         </div>
-      )}
+      </div>
     </div>
   );
 }

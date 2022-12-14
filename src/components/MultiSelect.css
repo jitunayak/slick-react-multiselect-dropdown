@@ -62,7 +62,6 @@ input {
 }
 
 .dropDownBox {
-  margin-top: 0.6rem;
   position: absolute;
   min-width: 12rem;
   width: max-content;
@@ -70,6 +69,24 @@ input {
   border-radius: 0.2rem;
   box-shadow: 1px 2px 5px #ccc;
   background-color: white;
+  transition: all 1s cubic-bezier(0.16, 1, 0.5, 1);
+  transform: translateY(0rem);
+  visibility: hidden;
+  opacity: 0;
+}
+
+.dropDownBoxShow {
+  position: absolute;
+  min-width: 12rem;
+  width: max-content;
+  border: 1px solid #eee;
+  border-radius: 0.2rem;
+  box-shadow: 1px 2px 5px #ccc;
+  background-color: white;
+  transition: all 1s cubic-bezier(0.16, 1, 0.5, 1);
+  transform: translateY(1rem);
+  visibility: visible;
+  opacity: 1;
 }
 
 .searchBox {
