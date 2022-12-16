@@ -193,4 +193,4 @@ function MultiSelect({
   );
 }
 
-export default MultiSelect;
+export { MultiSelect };
