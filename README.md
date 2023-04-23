@@ -1,7 +1,6 @@
 # Slick React Multiselect Dropdown
 
-# Demo ![](https://slick-react-multiselect-dropdown.vercel.app/) 
-![Demo](https://slick-react-multiselect-dropdown.vercel.app/) 
+### Demo https://slick-react-multiselect-dropdown.vercel.app/) 
 
 A very `lightweight` and simple multiple selection dropdown component with `search`
 
